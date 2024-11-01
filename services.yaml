@@ -1,0 +1,168 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/services
+
+- monitoring:
+    - uptimekuma:
+        href: "{{HOMEPAGE_VAR_UPTIMEKUMA_URL}}"
+        description: service monitor
+        siteMonitor: "{{HOMEPAGE_VAR_UPTIMEKUMA_URL}}"
+        icon: uptime-kuma.png
+        widget:
+            type: uptimekuma
+            url: "{{HOMEPAGE_VAR_UPTIMEKUMA_URL}}"
+            slug: installerguru
+            
+    - Zabbix:
+        href: "{{HOMEPAGE_VAR_ZABBIX_URL}}"
+        description: service monitor
+        siteMonitor: "{{HOMEPAGE_VAR_ZABBIX_URL}}"
+        icon: zabbix.png
+        widget:
+            type: zabbix
+            url: "{{HOMEPAGE_VAR_ZABBIX_URL}}"
+            key: "{{HOMEPAGE_VAR_ZABBIX_API_KEY}}"
+            
+    - SpeedTest:
+    - SpeedTest SITE-1:
+        href: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-1_URL}}"
+        description: speed monitor
+        siteMonitor: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-1_URL}}"
+        icon: myspeed.png
+        widget:
+            type: myspeed
+            url: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-1_URL}}"
+            password: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-1_PASSWORD}}" # only required if password is set
+    - SpeedTest SITE-2:
+        href: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-2_URL}}"
+        description: speed monitor
+        siteMonitor: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-2_URL}}"
+        icon: myspeed.png
+        widget:
+            type: myspeed
+            url: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-2_URL}}"
+            password: "{{HOMEPAGE_VAR_SPEEDTEST_SITE-2_PASSWORD}}" # only required if password is set
+
+- Dockers:
+    - Portainer-SITE-1:
+        href: "{{HOMEPAGE_VAR_PROTAINER_SITE-1_URL}}"
+        icon: portainer.png
+        description: docker container-site-1
+        siteMonitor: "{{HOMEPAGE_VAR_PROTAINER_SITE-1_URL}}"
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PROTAINER_SITE-1_URL}}"
+            env: 2
+            key: "{{HOMEPAGE_VAR_PROTAINER_SITE-1_API_KEY}}"
+    - Portainer-SITE-2:
+        href: "{{HOMEPAGE_VAR_PROTAINER_SITE-2_URL}}"
+        icon: portainer.png
+        description: docker container-site-2
+        siteMonitor: "{{HOMEPAGE_VAR_PROTAINER_SITE-2_URL}}"
+        widget:
+            type: portainer
+            url: "{{HOMEPAGE_VAR_PROTAINER_SITE-2_URL}}"
+            env: 2
+            key: "{{HOMEPAGE_VAR_PROTAINER_SITE-2_API_KEY}}"
+            
+    - Private Cloud:
+    - Nextcloud:
+        href: "{{HOMEPAGE_VAR_IGCLOUD_URL}}"
+        icon: nextcloud.png
+        description: IG cloud
+        siteMonitor: "{{HOMEPAGE_VAR_IGCLOUD_URL}}"
+        widget:
+            type: nextcloud
+            url: "{{HOMEPAGE_VAR_IGCLOUD_URL}}"
+            username: "{{HOMEPAGE_VAR_IGCLOUD_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_IGCLOUD_API_KEY}}"
+    - Media Server:
+    - Jellyfin:
+        href: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+        icon: jellyfin.png
+        description: Media-server
+        siteMonitor: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+        widget:
+            type: jellyfin
+            url: "{{HOMEPAGE_VAR_JELLYFIN_URL}}"
+            key: "{{HOMEPAGE_VAR_JELLYFIN_API_KEY}}"
+            enableBlocks: true # optional, defaults to false
+            enableNowPlaying: true # optional, defaults to true
+            enableUser: true # optional, defaults to false
+            showEpisodeNumber: true # optional, defaults to false
+            expandOneStreamToTwoRows: true # optional, defaults to true
+
+- Storage-SERVER:
+    - TrueNAS-1:
+        icon: truenas-core.png
+        href: "{{HOMEPAGE_VAR_TRUENAS-1_URL}}"
+        description: core
+        siteMonitor: "{{HOMEPAGE_VAR_TRUENAS-1_URL}}"
+        widget:
+            type: truenas
+            url: "{{HOMEPAGE_VAR_TRUENAS-1_URL}}"
+            key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY_1}}"
+            enablePools: true
+            nasType: core
+            
+
+    - TrueNAS-2:
+        icon: truenas.svg
+        href: "{{HOMEPAGE_VAR_TRUENAS-2_URL}}"
+        description: core
+        siteMonitor: "{{HOMEPAGE_VAR_TRUENAS-2_URL}}"
+        widget:
+            type: truenas
+            url: "{{HOMEPAGE_VAR_TRUENAS-2_URL}}"
+            key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY_2}}"
+            enablePools: true
+            nasType: core
+            
+
+    - TrueNAS-3:
+        icon: truenas.svg
+        href: "{{HOMEPAGE_VAR_TRUENAS-3_URL}}"
+        description: scale
+        siteMonitor: "{{HOMEPAGE_VAR_TRUENAS-3_URL}}"
+        widget:
+            type: truenas
+            url: "{{HOMEPAGE_VAR_TRUENAS-3_URL}}"
+            key: "{{HOMEPAGE_VAR_TRUENAS_API_KEY_3}}"
+            enablePools: true
+            nasType: scale
+            
+    - Wi-FI:
+    - Omanda:
+        icon: tp-link.png
+        href: "{{HOMEPAGE_VAR_OMANDA_URL}}"
+        description: Wi-Fi & Hotspot
+        siteMonitor: "{{HOMEPAGE_VAR_OMANDA_URL}}"
+        widget:
+            type: omada
+            url: "{{HOMEPAGE_VAR_OMANDA_URL}}"
+            username: "{{HOMEPAGE_VAR_OMANDA_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_OMANDA_PASSWORD}}"
+            site: IG
+  
+    - QNAP-NAS:
+        icon: qnap.png
+        href: "{{HOMEPAGE_VAR_NAS_URL}}"
+        description: NAS mini
+        siteMonitor: "{{HOMEPAGE_VAR_NAS_URL}}"
+        widget:
+            type: qnap
+            url: "{{HOMEPAGE_VAR_NAS_URL}}"
+            username: "{{HOMEPAGE_VAR_NAS_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_NAS_PASSWORD}}"
+            
+    - Proxymanager:
+    - Nginx:
+        icon: nginx.png
+        href: "{{HOMEPAGE_VAR_NGINX_URL}}"
+        description: Proxymanager
+        siteMonitor: "{{HOMEPAGE_VAR_NGINX_URL}}"
+        widget:
+            type: npm
+            url: "{{HOMEPAGE_VAR_NGINX_URL}}"
+            username: "{{HOMEPAGE_VAR_NGINX_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_NGINX_PASSWORD}}"

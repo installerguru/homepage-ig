@@ -1,0 +1,37 @@
+
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/service-widgets
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+    cputemp: true
+    tempmin: 0 # optional, minimum cpu temp
+    tempmax: 100 # optional, maximum cpu temp
+    uptime: true
+    units: imperial # only used by cpu temp
+    refresh: 3000 # optional, in ms
+    diskUnits: bytes # optional, bytes (default) or bbytes. Only applies to disk
+
+- search:
+    provider: google
+    focus: true
+    target: https://www.google.com/
+    showSearchSuggestions: true # Optional, will show search suggestions. Defaults to false
+
+- datetime:
+    text_size: xl
+    locale: nl
+    format:
+      dateStyle: short
+      timeStyle: short
+      hour12: true
+
+#- logo:
+    #icon: https://sp-ao.shortpixel.ai/client/to_auto,q_glossy,ret_img,w_76,h_76/https://www.sonihospitals.com/wp-content/uploads/2024/08/SONI-logo.png # optional
+
+- greeting:
+    text_size: xl
+    text: IG homepage
